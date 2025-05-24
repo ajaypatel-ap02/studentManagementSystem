@@ -1,137 +1,199 @@
-# 🎓 Student Management System (Java + JDBC + MySQL)
+Here is a **combined full-stack `README.md`** file for your **Student Management System** project, covering both the **frontend (ReactJS)** and **backend (Java Servlets + MySQL)** parts. This documentation is ideal for GitHub and project showcases.
 
-A console-based Java application for managing student records using **JDBC** and **MySQL**. This project supports features like adding, viewing, updating, and deleting student information.
+---
+
+```markdown
+# 🧑‍🎓 Student Management System – Full Stack Project
+
+A full-stack Student Management System built using:
+
+- ⚙️ **Backend:** Java Servlets, JDBC, MySQL
+- 🌐 **Frontend:** ReactJS
+- 📦 **Build Tools:** Maven, Node.js
+- 🚀 **Deployment:** Apache Tomcat 9
+
+This project allows administrators to perform CRUD operations on student records.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-studentManagementSystem/
-├── database/
-│   ├── mysql-connector-j-9.2.0.jar   # JDBC Driver
-│   └── student_db.sql                # SQL script to create the database & table
-├── src/
-│   └── com.Ajay.studentManagementSystem/
-│       ├── Main.java                 # Entry point of the application
-│       ├── Student.java              # POJO class
-│       ├── StudentDAO.java           # Handles DB operations
-│       ├── StudentManagement.java    # Business logic / menu
-│       └── Validator.java            # Input validation (email, mobile)
-└── README.md                         # You're reading it 🙂
-```
+
+student-management-system/
+├── student-management-backend/     # Java Servlet Backend (Tomcat 9)
+│   ├── src/
+│   └── pom.xml
+│   └── README.md
+├── STUDENT-MANAGEMENT-FRONTEND/    # React Frontend (Node.js)
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   ├── package.json
+│   └── README.md
+
+````
 
 ---
 
-## 💡 Features
+## 🧩 Features
 
-- ✅ Add a new student
-- ✅ View all students
-- 🔄 Update student info *(method present, needs UI integration)*
-- ❌ Delete student *(method present, needs UI integration)*
-- 📧 Email & mobile number validation using regex
-- 🛠️ Modular code with clear separation of concerns
-
----
-
-## 🛠 Technologies Used
-
-- Java (JDK 8+)
-- MySQL (via JDBC)
-- IntelliJ IDEA (or any Java IDE)
-- Regex (for validation)
+- Add, edit, delete, and view student records.
+- Full integration between frontend and backend.
+- Responsive user interface.
+- RESTful API communication.
+- JSON data exchange using Gson.
+- CORS enabled for frontend-backend interaction.
 
 ---
 
-## 🔧 Setup Instructions
+## ⚙️ Technologies Used
 
-### 1. Clone or Download the Repository
-```bash
-git clone https://github.com/your-username/studentManagementSystem.git
-```
+### Backend
 
-### 2. Database Setup
+- Java 8+
+- Java Servlets (javax.servlet-api-4.0.1)
+- JDBC (MySQL)
+- MySQL 8
+- Gson 2.10
+- Apache Tomcat 9
+- Maven
 
-- Open **MySQL Workbench** or your terminal
-- Run the SQL script:
+### Frontend
+
+- ReactJS (CRA)
+- Axios
+- React Router
+- HTML5 + CSS3 + JSX
+
+---
+
+## 🏗️ Backend Setup
+
+### 1. Database Configuration
+
+Run the following SQL on MySQL:
+
 ```sql
--- student_db.sql
-CREATE DATABASE IF NOT EXISTS student_db;
+CREATE DATABASE student_db;
 
 USE student_db;
 
-CREATE TABLE IF NOT EXISTS students (
+CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100),
     mobile VARCHAR(10),
     course VARCHAR(100)
 );
-```
+````
 
-### 3. Update DB Credentials
+### 2. Configure DB in `StudentDAO.java`
 
-In `StudentDAO.java`, update the following:
 ```java
 String url = "jdbc:mysql://localhost:3306/student_db";
 String user = "root";
-String password = "your_password_here";
+String password = "your_password";
 ```
 
-### 4. Add MySQL Connector JAR
+### 3. Build & Deploy
 
-- Download from [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)
-- Place the JAR in the `database/` or `lib/` folder
-- In IntelliJ: File → Project Structure → Modules → Dependencies → Add JAR
+* Use `mvn clean package` to build a WAR.
+* Deploy the WAR file to Tomcat 9 `webapps` folder.
+* Start Tomcat and access:
+
+  ```
+  http://localhost:8081/studentManagementSystem
+  ```
 
 ---
 
-## ▶️ Running the Project
+## 🌍 API Endpoints
 
-Open your terminal or IntelliJ terminal and run:
+| Method | Endpoint         | Description          |
+| ------ | ---------------- | -------------------- |
+| GET    | `/students`      | Get all students     |
+| POST   | `/students`      | Add a new student    |
+| PUT    | `/students/{id}` | Update student by ID |
+| DELETE | `/students/{id}` | Delete student by ID |
+
+---
+
+## 🖥️ Frontend Setup
+
+### 1. Navigate to frontend folder
 
 ```bash
-javac src/com/Ajay/studentManagementSystem/Main.java
-java com.Ajay.studentManagementSystem.Main
+cd STUDENT-MANAGEMENT-FRONTEND
 ```
 
-Choose from the available options:
-```
-Enter the operation number:
-1 → Add Student
-2 → View All Students
-```
-
----
-
-## 🚀 Future Improvements
-
-- GUI Interface using JavaFX or Swing
-- Search students by name or course
-- Sort students by ID, name, or course
-- Export student records to a CSV file
-- Better exception handling & logging
-
----
-
-## 📸 Sample Output
+### 2. Install Dependencies
 
 ```bash
-Enter the operation number for the operation
-1
-Enter student name
-Ajay Patel
-Enter student email
-ajay@example.com
-Enter student mobile number
-9876543210
-Enter student course
-BCA
-Student added successfully 1
+npm install
 ```
+
+### 3. Start React App
+
+```bash
+npm start
+```
+
+* The app runs on: `http://localhost:3000`
+* Axios connects to the backend (`http://localhost:8080`)
+
+> Make sure Tomcat is running and CORS is enabled in backend (`CORSFilter.java`).
 
 ---
 
-## 📬 Contact
+## 🧠 Folder Highlights
 
-Made with ❤️ by [Ajay Patel](https://github.com/ajaypatel-ap02)
+### React Frontend
+
+* `components/NavBar.jsx` – Navigation bar
+* `pages/` – CRUD Pages: AddStudent, EditStudent, DeleteStudent, StudentList
+* `services/studentService.js` – Axios service layer
+
+### Java Backend
+
+* `dao/StudentDAO.java` – Database operations
+* `model/Student.java` – Data class
+* `servlet/StudentServlet.java` – API controller
+* `filter/CORSFilter.java` – CORS support
+
+---
+
+## 🧪 Testing the App
+
+* Launch frontend: `http://localhost:3000`
+* Make API requests from UI.
+* Inspect requests via DevTools or Postman.
+
+---
+
+## 🛠️ Future Enhancements
+
+* Form validation & alerts
+* Authentication (JWT)
+* Pagination and Search
+* Export to Excel or PDF
+* Spring Boot migration
+* MongoDB Integration
+
+---
+
+## 👨‍💻 Developed By
+
+**Ajay Patel**
+🔗 GitHub: [ajaypatel-ap02](https://github.com/ajaypatel-ap02)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+```
+
+---

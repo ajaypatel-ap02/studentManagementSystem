@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="student-management-system" default="war" basedir=".">
+
+    <!-- Define properties -->
+    <property name="src.dir" value="src/main/java"/>
+    <property name="web.dir" value="src/main/webapp"/>
+    <property name="build.dir" value="target"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="war.file" value="${ant.project.name}.war"/>
+
+    <!-- Create required directories -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <!-- Clean build directories -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <!-- Compile Java sources -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" includeantruntime="false">
+            <classpath>
+                <fileset dir="${maven.repository}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Create WAR file -->
+    <target name="war" depends="compile">
+        <war destfile="${build.dir}/${war.file}" webxml="${web.dir}/WEB-INF/web.xml">
+            <classes dir="${classes.dir}"/>
+            <fileset dir="${web.dir}">
+                <exclude name="WEB-INF/web.xml"/>
+            </fileset>
+        </war>
+    </target>
+
+</project>
