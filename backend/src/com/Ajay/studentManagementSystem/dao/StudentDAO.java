@@ -1,4 +1,4 @@
-package com.Ajay.studentManagementSystem;
+package com.Ajay.studentManagementSystem.dao;
 
 import com.Ajay.studentManagementSystem.model.Student;
 

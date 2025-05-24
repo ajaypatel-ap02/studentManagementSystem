@@ -1,6 +1,6 @@
 package com.Ajay.studentManagementSystem.main;
 
-import com.Ajay.studentManagementSystem.StudentDAO;
+import com.Ajay.studentManagementSystem.dao.StudentDAO;
 import com.Ajay.studentManagementSystem.model.Student;
 import com.Ajay.studentManagementSystem.util.Validator;
 

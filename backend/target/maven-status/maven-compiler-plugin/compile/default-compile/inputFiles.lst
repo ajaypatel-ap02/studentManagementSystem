@@ -1,7 +1,7 @@
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\filter\CORSFilter.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\model\Student.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\main\StudentManagement.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\servlet\StudentServlet.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\util\Validator.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\dao\StudentDAO.java
-D:\Ajay\java project\studentManagementSystem\studentManagementSystem\src\com\Ajay\studentManagementSystem\main\Main.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\dao\StudentDAO.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\model\Student.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\filter\CORSFilter.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\servlet\StudentServlet.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\util\Validator.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\main\StudentManagement.java
+D:\Ajay\java project\studentManagementSystem\backend\src\com\Ajay\studentManagementSystem\main\Main.java
