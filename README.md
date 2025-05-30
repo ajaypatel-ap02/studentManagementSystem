@@ -1,8 +1,3 @@
-Here is a **combined full-stack `README.md`** file for your **Student Management System** project, covering both the **frontend (ReactJS)** and **backend (Java Servlets + MySQL)** parts. This documentation is ideal for GitHub and project showcases.
-
----
-
-```markdown
 # 🧑‍🎓 Student Management System – Full Stack Project
 
 A full-stack Student Management System built using:
